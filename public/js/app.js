@@ -1,5 +1,3 @@
-console.log('js file')
-
 const weatherform = document.querySelector('form')
 const formData = document.querySelector('input') 
 const loading_message = document.querySelector('#loading_message')
@@ -20,7 +18,7 @@ weatherform.addEventListener('submit',(event)=>{
 	message2.textContent = ''
 
 
-	fetch('http://localhost:3000/weather?address='+location).then((response) => {
+	fetch('/weather?address='+location).then((response) => {
 		response.json().then((data) => {
 			if(data.error) 
 			{

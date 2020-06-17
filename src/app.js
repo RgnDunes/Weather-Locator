@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast')
 const chalk = require('chalk')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewspath = path.join(__dirname,'../templates/views')
@@ -18,27 +19,15 @@ hbs.registerPartials(partialspath)
 app.use(express.static(publicDirectoryPath))
 
 app.get('',(req,res)=>{
-	res.render('index',{
-		body: 'Welcome to the Home Page',
-		title: 'Home Page',
-		name: 'Divyansh_Singh_Home'
-	})
+	res.render('index')
 })
 
 app.get('/help',(req, res)=>{
-	res.render('help',{
-		body: 'Welcome to the Help Page',
-		title: 'Help',
-		name: 'Divyansh_Singh_Help'
-	})
+	res.render('help')
 })
 
 app.get('/about',(req, res)=>{
-	res.render('about',{
-		body: 'Welcome to the About Page',
-		title: 'About',
-		name: 'Divyansh_Singh_About'
-	})
+	res.render('about')
 })
 
 app.get('/weather',(req, res)=>{
@@ -76,12 +65,10 @@ app.get('/weather',(req, res)=>{
 
 app.get('*',(req,res)=>{
 	res.render('404',{
-		title: '404',
-		name: 'Divyansh_Singh_404',
 		errormessage: '404 Page not found'
 	})
 })
 
-app.listen(3000, ()=>{
-	console.log('[Server '+chalk.blue.inverse('STARTED')+' at port 3000...]')
+app.listen(port, ()=>{
+	console.log('[Server '+chalk.blue.inverse('STARTED')+' at port ...]'+port)
 })
