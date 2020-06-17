@@ -1,0 +1,52 @@
+body{
+	color: #333333;
+	font-family: arial;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0 20px;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-image: url("https://images.wallpaperscraft.com/image/grass_light_sunny_18362_1280x720.jpg");
+	background-repeat: no-repeat;
+}
+.main-content{
+	flex-grow: 1;
+}
+footer{
+	margin: 10px;
+	color: #333333;
+	background : black;
+	border-radius: 25%;
+}
+header{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background : black;
+	border-radius: 25%;
+}
+h1{
+	font-size: 64px;
+	margin-bottom: 20px;
+}
+header a{
+	color: #888888;
+	margin-right: 20px;
+	margin-left: 20px;
+	text-decoration: none;
+}
+button {
+	cursor : pointer;
+	border : 1px solid green;
+	background : green;
+	color : white;
+	padding: 8px;
+	border-radius: 100%;
+}
+input{
+	border: 1px solid #cccccc;
+	padding: 8px;
+}
+.carousel-item{
+	data-interval="";
+}
